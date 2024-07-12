@@ -82,7 +82,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'financeTrackerdb',
-        'USER':'postgre',
+        'USER':'postgres',
         'PASSWORD':'S@dz@101',
         'HOST':'localhost',
         'PORT':'5432'
