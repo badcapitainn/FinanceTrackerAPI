@@ -1,37 +1,41 @@
-from .models import User, Account, Cartegory, Transaction, Budget, Goal, RecurringTransaction
+from .models import Account, Cartegory, Transaction, Budget, Goal, RecurringTransaction
 from rest_framework import serializers
+from django.contrib.auth.models import User
+from django.contrib.auth.hashers import make_password
+from django.contrib.auth import authenticate
 
-class UserSerializer(serializers.Serializer):
-    class Meta:
-        model = User
-        fields = '__all__'
-    
-class AccountSerializer(serializers.Serializer):
+class UserRegistrationSerializer(serializers.ModelSerializer):
+    pass
+
+class UserLoginSerializer(serializers.ModelSerializer):
+   pass
+
+class AccountSerializer(serializers.ModelSerializer):
     class Meta:
         model = Account
         fields = '__all__'
         
-class CartegorySerializer(serializers.Serializer):
+class CartegorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Cartegory
         fields = '__all__'
         
-class TransactionSerializer(serializers.Serializer):
+class TransactionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Transaction
         fields = '__all__'
         
-class BudgetSerializer(serializers.Serializer):
+class BudgetSerializer(serializers.ModelSerializer):
     class Meta:
         model = Budget
         fields = '__all__'
         
-class GoalSerializer(serializers.Serializer):
+class GoalSerializer(serializers.ModelSerializer):
     class Meta:
         model = Goal
         fields = '__all__'
 
-class RecurringTransactionSerializer(serializers.Serializer):
+class RecurringTransactionSerializer(serializers.ModelSerializer):
     class Meta:
         model = RecurringTransaction
         fields = '__all__'
