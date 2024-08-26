@@ -40,7 +40,15 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'FinanceTrackerAPI',
+    'rest_framework.authtoken',
+    'UserAuth'
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication'
+    ]
+}
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
